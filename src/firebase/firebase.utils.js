@@ -10,7 +10,33 @@ const config = {
   storageBucket: "midgar-shop-db.appspot.com",
   messagingSenderId: "574827557776",
   appId: "1:574827557776:web:2d6d38822962667f5e7915",
-  measurementId: "G-MY072GVZ51"
+  measurementId: "G-MY072GVZ51",
+};
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData,
+      });
+    } catch (error) {
+      console.log("error creating user", error.message);
+    }
+  }
+  return userRef;
+  // console.log(snapShot);
 };
 
 firebase.initializeApp(config);
