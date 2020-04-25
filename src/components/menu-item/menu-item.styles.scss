@@ -1,5 +1,5 @@
 .menu-item {
-  height: 20vh;
+  height: 30vh;
   // flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -23,10 +23,6 @@
 
   &.large {
     height: 600px;
-  }
-
-  &:first-child {
-    // margin-right: 7.5px;
   }
 
   &:last-child {
@@ -66,7 +62,7 @@
   }
 }
 
-@media all and (max-width: 450px) {
+@media all and (max-width: 490px) {
   .menu-item {
     &.large {
       height: 350px;
