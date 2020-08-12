@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./MenuItem.scss";
 
-function MenuItem({ title, imageUrl, size, linkUrl }) {
+const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
   const history = useHistory();
 
   const handleClick = () => {
@@ -24,6 +24,6 @@ function MenuItem({ title, imageUrl, size, linkUrl }) {
       </div>
     </div>
   );
-}
+};
 
 export default MenuItem;
