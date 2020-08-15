@@ -5,12 +5,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import "./App.scss";
 
-import Homepage from "./pages/Homepage/Homepage";
-import ShopPage from "./pages/ShopPage/ShopPage";
-import SignInAndSignUp from "./pages/SignInAndSignUp/SignInAndSignUp";
-import Checkout from "./components/Checkout/Checkout";
+import Homepage from "./pages/Homepage/homepage.component";
+import ShopPage from "./pages/ShopPage/shop-page.component";
+import SignInAndSignUp from "./pages/SignInAndSignUp/sign-in-and-sign-up.component";
+import Checkout from "./pages/Checkout/checkout.component";
 
-import Header from "./components/Header/Header";
+import Header from "./components/Header/header.component";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase";
 
